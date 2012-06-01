@@ -103,12 +103,17 @@ function name($file) {
 				},
 				carouselTimer: null,
 				carouselPlay: function () {
+					if (this.carouselTimer) {
+						this.carouselStop();
+					}
+
 					this.carouselTimer = setInterval($.proxy(this.carousel, this), this.carouselDelay);
 					this.randomFaces(this.displayRandom).show();
 				},
 				carouselStop: function () {
 					clearInterval(this.carouselTimer);
 					this.carouselTimer = false;
+					this.faces.stop();
 					this.faces.hide();
 				},
 				carousel: function () {
