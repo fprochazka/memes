@@ -114,6 +114,7 @@ function name($file) {
 					clearInterval(this.carouselTimer);
 					this.carouselTimer = false;
 					this.faces.stop();
+					this.faces.css({opacity:1});
 					this.faces.hide();
 				},
 				carousel: function () {
